@@ -1,9 +1,36 @@
 # place your code to clean up the data file below.
 #I switched to anaconda3 interepreter because panda is not installed in the local Python interpreter
 import pandas as pd
+import urllib.request
+import json 
 
-file_path = '/Users/yizj/Desktop/Database Design/3-spreadsheet-analysis-beaverjuly/data/New_York_City_Leading_Causes_of_Death_20240214.csv'
-df = pd.read_csv(file_path)
+url = 'https://data.cityofnewyork.us/resource/jb7j-dtam.json?$limit=2000'
+response = urllib.request.urlopen(url)
+data = json.load(response)
+
+w = open("/Users/yizj/Desktop/Database Design/3-spreadsheet-analysis-beaverjuly/data/original_data_file.csv", "w")
+
+headings = list(data[0].keys())
+heading = []
+for h in headings:
+    s = ""
+    for char in h:
+        if char == "_":
+            s += " "
+        else:
+            s += char
+    headings[headings.index(h)] = s.title()
+w.write(",".join(headings))
+#I changed this line from "".join(headings) to ",".join(headings)
+w.write("\n")
+
+for i in data:
+    w.write(",".join(i.values()))
+    w.write("\n")
+
+w.close()
+
+df = pd.read_csv("'/Users/yizj/Desktop/Database Design/3-spreadsheet-analysis-beaverjuly/data/original_data_file.csv'")
 
 #sort the DataFrame by 'Race Ethnicity' and then by 'Year' in ascending order
 sorted_df = df.sort_values(by=['Race Ethnicity', 'Year'], ascending=[True, True])
@@ -36,3 +63,6 @@ grouped_df.replace([np.inf, -np.inf],np.nan,inplace=True)
 
 grouped_file_path = '/Users/yizj/Desktop/Database Design/3-spreadsheet-analysis-beaverjuly/data/clean_data_file.csv'
 grouped_df.to_csv(grouped_file_path, index=False)
+
+unique_values = grouped_df['Leading Cause'].unique()
+print(unique_values)

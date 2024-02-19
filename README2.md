@@ -83,7 +83,34 @@ The minimum sum of deaths can be attributed to two factors: smaller populations 
 The data shows a low death rate, 2.4, for nephritis, nephrotic syndrome, and nephrosis among Asian and Pacific Islander females, with 13 deaths recorded. This suggests relatively favorable health outcomes for this demographic group concerning these conditions, which may result from healthier habits related to these issues.
 
 ## 2. Mean Death Rate of Each Unique Leading Cause of Death for Each Race Ethnicity 
-PLZPLZPLZPLZPLZPLZ
+I computed the Mean, the Median, and the Standard Deviation of death rate over the entire range of years for each ethnic group and for each Leading Cause of Death (meaning two conditions for each value computed) using Excel built-in formulas.
+In addition, I computed the difference between mean and median.
+
+**Comparison of Mean shows Variability Among Ethnic Groups** 
+There is a noticeable variation in mean death rates **between** different ethnic groups for certain diseases. 
+
+For instance, the mean death rate for 'Accidents Except Drug Poisoning' and 'All Other Causes' is significantly higher in the 'White Non-Hispanic' group compared to other ethnic groups.
+
+**Standard Deviation (SD) as a Measure of Disparity** 
+The SD provides insight into the variability of death rates **within** each ethnic group for a given cause. 
+
+For example, 'All Other Causes' shows a relatively high SD in the 'White Non-Hispanic' group, indicating more variability in death rates.
+
+**Comparing Mean and Median** 
+For many diseases, the mean and median values are close, suggesting a relatively symmetrical distribution of data around the central value. However, where there are significant differences between mean and median, it might indicate a skewed distribution, possibly due to outliers or an asymmetrical spread of death rates.
+
+The largest discrepency between mean and median death rates occurs for the Leading Cause of Death of Diseases of Heart (I00-I09, I11, I13, I20-I51) among the White, Non-Hispanic population. The Mean is higher than the Median by 22.99, indicating a positive skew.
+
+**Bar Charts**
+
+![MeanBarChart](Mean_Bar_Chart.png)
+![MedianBarChart](Median_Bar_Chart.png)
+
+
+
+These charts are for more convenient comparisons between ethnic groups.
+
+White Non-Hispanics generally have higher death rates for the causes listed, with the exception of diabetes and hypertension-related diseases, where Black Non-Hispanics have the highest rates. 
 
 ## 3. Diabetes
 We use pivot table and pivot chart to examine the average death rate of diabetes mellitus among different ethnic groups from 2007 to the most recent data available. Below are the details provided by both the pivot table and pivot chart:

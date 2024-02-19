@@ -24,13 +24,24 @@ w.write(",".join(headings))
 #I changed this line from "".join(headings) to ",".join(headings)
 w.write("\n")
 
+starting = True
 for i in data:
-    w.write(",".join(i.values()))
+    for x in i.values():
+        if starting:
+            w.write(x)
+            starting = False
+        else:
+            if "," in x:
+                v = '"' + x + '"'
+                x = v
+            w.write(","+x)
     w.write("\n")
+    starting = True
+
 
 w.close()
 
-df = pd.read_csv("'/Users/yizj/Desktop/Database Design/3-spreadsheet-analysis-beaverjuly/data/original_data_file.csv'")
+df = pd.read_csv("/Users/yizj/Desktop/Database Design/3-spreadsheet-analysis-beaverjuly/data/original_data_file.csv")
 
 #sort the DataFrame by 'Race Ethnicity' and then by 'Year' in ascending order
 sorted_df = df.sort_values(by=['Race Ethnicity', 'Year'], ascending=[True, True])

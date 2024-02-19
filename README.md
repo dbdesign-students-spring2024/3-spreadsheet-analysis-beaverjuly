@@ -70,9 +70,9 @@ The largest discrepency between mean and median death rates occurs for the Leadi
 
 **Bar Charts**
 
-![Mean Bar Chart](/Mean_Bar_Chart.png)
+![MeanBarChart](Mean_Bar_Chart.png)
+![MedianBarChart](Median_Bar_Chart.png)
 
-![Median Bar Chart](/Median_Bar_Chart.png)
 
 
 These charts are for more convenient comparisons between ethnic groups.
